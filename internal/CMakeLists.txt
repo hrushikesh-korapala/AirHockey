@@ -1,0 +1,1 @@
+cpmgetpackage(SDL2)
