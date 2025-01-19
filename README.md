@@ -1,1 +1,8 @@
-# Welcome to World Class Project
+# AirHockey
+## Testing
+``` bash
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+./bin/SDLTest 
+```
