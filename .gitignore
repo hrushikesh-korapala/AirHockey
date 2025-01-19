@@ -1,0 +1,84 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.la
+*.lo
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+.cmake/
+
+# IDE specific files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*.user
+*.suo
+*.sln
+*.vcxproj*
+.DS_Store
+
+# Backup files
+*.bak
+*~
+*.backup
+*.tmp
+
+# Dependencies and libraries
+external/
+vendor/
+third-party/
+
+# Generated documentation
+docs/generated/
+doxygen/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+
+# Precompiled Headers
+*.gch
+*.pch
+*.ipch
+
+# Code coverage
+*.gcno
+*.gcda
+*.gcov

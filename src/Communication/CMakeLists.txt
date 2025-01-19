@@ -1,0 +1,2 @@
+add_subdirectory(udp_client)
+add_subdirectory(udp_server)
