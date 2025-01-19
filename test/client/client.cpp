@@ -3,7 +3,7 @@
 
 int main() {
     try {
-        comms::UDPClient client("127.0.0.1", 8080);
+        comms::UDPClient client("52.172.26.255", 9696);
         client.sendAndReceive("Hello, Server!");
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

@@ -2,7 +2,7 @@
 
 int main() {
     try {
-        comms::UDPServer server(8080);
+        comms::UDPServer server(9696);
         server.start();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
