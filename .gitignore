@@ -46,8 +46,6 @@ compile_commands.json
 *.tmp
 
 # Dependencies and libraries
-lib/
-libs/
 external/
 vendor/
 third-party/
