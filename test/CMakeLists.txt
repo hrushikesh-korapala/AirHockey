@@ -1,3 +1,4 @@
-add_subdirectory(sdl_test)
-add_subdirectory(client)
-add_subdirectory(server)
+add_subdirectory(SDLTest)
+add_subdirectory(Client)
+add_subdirectory(Server)
+add_subdirectory(RenderTest)

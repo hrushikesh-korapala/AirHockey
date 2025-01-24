@@ -1,0 +1,57 @@
+#include "login.h"
+#define WIDTH 480
+#define HEIGHT 840
+
+int main() {
+    SDL_Window* win;
+    SDL_Renderer* rend;
+
+    if (SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO) < 0)
+	{
+		std::cerr << "SDL error: " << SDL_GetError() << std::endl;
+		exit(1);
+	}
+
+	win = SDL_CreateWindow("Air Hockey", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+	if (!win)
+	{
+		std::cerr << "SDL error: " << SDL_GetError() << std::endl;
+		exit(1);
+	}
+
+	rend = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	if (!rend)
+	{
+		std::cerr << "SDL error: " << SDL_GetError() << std::endl;
+		exit(1);
+	}
+    texture::Login log;
+    log.load_texture(win,rend);
+
+    bool running = true;
+    SDL_Event event;
+    
+    while (running) {
+        // Handle events
+        while (SDL_PollEvent(&event)) {
+            switch (event.type) {
+                case SDL_QUIT:
+                    running = false;
+                    break;
+                case SDL_KEYDOWN:
+                    if (event.key.keysym.sym == SDLK_ESCAPE) {
+                        running = false;
+                    }
+                    break;
+            }
+        }
+        
+        // Add a small delay to prevent high CPU usage
+        SDL_Delay(16); // Roughly 60 FPS
+    }
+
+    // Cleanup
+    SDL_DestroyWindow(win);
+    SDL_Quit();
+    return 0;
+}
