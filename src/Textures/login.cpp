@@ -22,6 +22,10 @@ void Login::loadTexture(SDL_Window* window, SDL_Renderer* renderer)
 	SDL_RenderCopy(renderer, text_box, NULL, &this->__pass_box_rect);
 	SDL_RenderCopy(renderer, login_box, NULL, &this->__login_rect);
     SDL_RenderPresent(renderer);
+    SDL_DestroyTexture(user_icon);
+    SDL_DestroyTexture(pass_icon);
+    SDL_DestroyTexture(text_box);
+    SDL_DestroyTexture(login_box);
 }
 
 void Login::init(SDL_Window* window, SDL_Renderer* renderer)
@@ -40,7 +44,7 @@ void Login::clearTexture(SDL_Window* window, SDL_Renderer* renderer)
     SDL_RenderPresent(renderer);
 }
 
-LoginState Login::checkEvent(SDL_Event& event)
+LoginState::LoginState Login::checkEvent(SDL_Event& event)
 {
     switch (event.type)
     {
@@ -82,7 +86,7 @@ LoginState Login::checkEvent(SDL_Event& event)
     return this->__curr_state;
 }
 
-PageState Login::handleEvent(SDL_Event &event, SDL_Window* window, SDL_Renderer* renderer)
+PageState::PageState Login::handleEvent(SDL_Event &event, SDL_Window* window, SDL_Renderer* renderer)
 {
     this->checkEvent(event);
     if(event.type==SDL_KEYDOWN)

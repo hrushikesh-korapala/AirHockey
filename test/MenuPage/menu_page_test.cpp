@@ -25,7 +25,7 @@ int main() {
 		std::cerr << "SDL error: " << SDL_GetError() << std::endl;
 		exit(1);
 	}
-    texture::Login log;
+    texture::Menu log;
     log.init(win,rend);
     PageState::PageState page_state;
     
@@ -42,7 +42,7 @@ int main() {
                     break;
                 default:
                     page_state = log.handleEvent(event,win,rend);
-                    if(page_state == PageState::MenuPage) log.clearTexture(win,rend);
+                    if(page_state == PageState::GamePage) log.clearTexture(win,rend);
                     else if(page_state == PageState::QuitPage) running = false;
                     break;
             }

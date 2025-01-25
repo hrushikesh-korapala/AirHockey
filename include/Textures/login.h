@@ -29,11 +29,11 @@ namespace texture
         ~Login() override;
         void loadTexture(SDL_Window* window, SDL_Renderer* renderer) override;
         void clearTexture(SDL_Window* window, SDL_Renderer* renderer) override;
-        LoginState checkEvent(SDL_Event &event);
-        PageState handleEvent(SDL_Event &event, SDL_Window* window, SDL_Renderer* renderer);
+        LoginState::LoginState checkEvent(SDL_Event &event);
+        PageState::PageState handleEvent(SDL_Event &event, SDL_Window* window, SDL_Renderer* renderer);
 
         private:
-        LoginState __curr_state;
+        LoginState::LoginState __curr_state;
         std::string __user_icon;
         std::string __pass_icon;
         std::string __login_icon;

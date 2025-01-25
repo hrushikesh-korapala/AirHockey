@@ -1,2 +1,3 @@
 add_subdirectory(Communication)
 add_subdirectory(Textures)
+add_subdirectory(Utils)

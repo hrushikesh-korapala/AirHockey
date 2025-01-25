@@ -1,18 +1,36 @@
-#pragma once
+#ifndef _GAME_CLIENT_STATES_
+#define _GAME_CLIENT_STATES_
 
-enum LoginState
+namespace LoginState
 {
-    Normal,
-	Username,
-	Password,
-	Login,
-	Quit
-};
+	enum LoginState
+	{
+		Normal,
+		Username,
+		Password,
+		Login,
+		Quit
+	};
+}
 
-enum PageState
+namespace MenuState
 {
-	LoginPage,
-	MenuPage,
-	GamePage,
-	QuitPage
-};
+	enum MenuState
+	{
+		Normal,
+		Start,
+		Quit
+	};
+}
+
+namespace PageState
+{
+	enum PageState
+	{
+		LoginPage,
+		MenuPage,
+		GamePage,
+		QuitPage
+	};
+}
+#endif // _GAME_CLIENT_STATES_
