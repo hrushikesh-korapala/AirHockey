@@ -14,8 +14,8 @@ namespace texture
         Screen() {}
         virtual ~Screen() {}
         
-        virtual void load_texture(SDL_Window* window, SDL_Renderer* renderer) {}
-        virtual void clear_texture(SDL_Window* window, SDL_Renderer* renderer) {}
+        virtual void loadTexture(SDL_Window* window, SDL_Renderer* renderer) {}
+        virtual void clearTexture(SDL_Window* window, SDL_Renderer* renderer) {}
     };
 }
 

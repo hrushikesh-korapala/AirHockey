@@ -1,6 +1,6 @@
 add_library(basic_textures login.cpp)
 
-target_include_directories(basic_textures PUBLIC ${PROJECT_SOURCE_DIR}/include/Textures/
+target_include_directories(basic_textures PUBLIC ${PROJECT_SOURCE_DIR}/include/
                             ${SDL2_SOURCE_DIR}/include ${SDL2_BINARY_DIR}/include
                             ${SDL2_Image_SOURCE_DIR}/include ${SDL2_Image_BINARY_DIR}/include
                             ${SDL2_ttf_SOURCE_DIR} ${SDL2_ttf_BINARY_DIR}/include

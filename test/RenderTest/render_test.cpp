@@ -1,6 +1,5 @@
-#include "login.h"
-#define WIDTH 480
-#define HEIGHT 840
+#include "Textures/login.h"
+#include "Utils/utils.h"
 
 int main() {
     SDL_Window* win;
@@ -26,7 +25,9 @@ int main() {
 		exit(1);
 	}
     texture::Login log;
-    log.load_texture(win,rend);
+    log.init(win,rend);
+    PageState page_state;
+    
 
     bool running = true;
     SDL_Event event;
@@ -38,10 +39,10 @@ int main() {
                 case SDL_QUIT:
                     running = false;
                     break;
-                case SDL_KEYDOWN:
-                    if (event.key.keysym.sym == SDLK_ESCAPE) {
-                        running = false;
-                    }
+                default:
+                    page_state = log.handleEvent(event,win,rend);
+                    if(page_state == PageState::MenuPage) log.clearTexture(win,rend);
+                    else if(page_state == PageState::QuitPage) running = false;
                     break;
             }
         }
@@ -51,7 +52,9 @@ int main() {
     }
 
     // Cleanup
+    SDL_DestroyRenderer(rend);
     SDL_DestroyWindow(win);
+    TTF_Quit();
     SDL_Quit();
     return 0;
 }
